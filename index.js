@@ -70,3 +70,16 @@ let allWagesFor = function () {
 
     return payable
 }
+
+
+function findEmployeeByFirstName(srcArray, firstName) {
+    return srcArray.find(e => e.firstName === firstName);
+}
+
+function calculatePayroll(srcArray) {
+    let totalWages = srcArray.reduce(function (total, currentValue) {
+        let newTotal = allWagesFor.call(currentValue) + total
+        return newTotal;
+    }, 0)
+    return totalWages;
+}
