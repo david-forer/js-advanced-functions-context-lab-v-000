@@ -18,23 +18,22 @@ function createEmployeeRecords(employeesArray) {
 }
 
 function createTimeInEvent(dateStamp) {
-  let timeInObj = {
-    type: "TimeIn",
-    hour: parseInt(dateStamp.slice(11, 16),10),
-    date:dateStamp.slice(0,10)
-  };
-  this.timeInEvents.push(timeInObj);
-  return this;
+    let timeInObj = {
+        type: "TimeIn",
+        hour: (dateStamp.length > 13 ? parseInt(dateStamp.slice(11), 10) : parseInt(dateStamp.slice(9), 10)),
+        date: (dateStamp.length > 13 ? dateStamp.slice(0, 10) : dateStamp.slice(0, 8))
+    }
+    this.timeInEvents.push(timeInObj);
+    return this;
 }
-
 function createTimeOutEvent(dateStamp) {
-  let timeOutObj = {
-    type: "TimeOut",
-    hour: parseInt(dateStamp.slice(11, 16),10),
-    date:dateStamp.slice(0,10)
-  };
-  this.timeOutEvents.push(timeOutObj);
-  return this;
+    let timeInObj = {
+        type: "TimeOut",
+        hour: (dateStamp.length > 13 ? parseInt(dateStamp.slice(11), 10) : parseInt(dateStamp.slice(9), 10)),
+        date: (dateStamp.length > 13 ? dateStamp.slice(0, 10) : dateStamp.slice(0, 8))
+    }
+    this.timeOutEvents.push(timeInObj);
+    return this;
 }
 
 function hoursWorkedOnDate(date) {
