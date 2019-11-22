@@ -1,5 +1,18 @@
 /* Your Code Here */
 
+function createEmployeeRecord(employeeData) {
+  let newEmployee = {};
+  
+  newEmployee.firstName = employeeData[0];
+  newEmployee.familyName = employeeData[1];
+  newEmployee.title = employeeData[2];
+  newEmployee.payPerHour = employeeData[3];
+  newEmployee.timeInEvents = [];
+  newEmployee.timeOutEvents = [];
+  
+  return newEmployee;
+}
+
 /*
  We're giving you this function. Take a look at it, you might see some usage
  that's new and different. That's because we're avoiding a well-known, but
