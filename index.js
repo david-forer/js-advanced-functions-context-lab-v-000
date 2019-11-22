@@ -13,7 +13,9 @@ function createEmployeeRecord(employeeData) {
   return newEmployee;
 }
 
-
+function createEmployeeRecords(employeesArray) {
+  return employeesArray.map(createEmployeeRecord);
+}
 
 /*
  We're giving you this function. Take a look at it, you might see some usage
