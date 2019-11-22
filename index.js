@@ -17,7 +17,7 @@ function createEmployeeRecords(employeesArray) {
   return employeesArray.map(createEmployeeRecord);
 }
 
-function createTimeInEvent(employeeRecord, dateStamp) {
+function createTimeInEvent(dateStamp) {
   let timeInObj = {
     type: "TimeIn",
     hour: parseInt(dateStamp.slice(11, 16),10),
@@ -27,7 +27,7 @@ function createTimeInEvent(employeeRecord, dateStamp) {
   return this;
 }
 
-function createTimeOutEvent(employeeRecord, dateStamp) {
+function createTimeOutEvent(dateStamp) {
   let timeOutObj = {
     type: "TimeOut",
     hour: parseInt(dateStamp.slice(11, 16),10),
